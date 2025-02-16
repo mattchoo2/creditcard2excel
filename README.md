@@ -129,3 +129,32 @@ Before proceeding, ensure you have the following installed on your system:
 
 By following these steps, you can efficiently extract tables from PDFs into Excel using PowerShell or Command Prompt with Python.
 
+## Step 6: Combine all excels into a single excel file
+1. Open Notepad and paste the following Python script:
+```
+import pandas as pd
+import os
+
+input_folder = os.path.expanduser("~/Downloads/A")
+output_file = os.path.join(input_folder, "combined.xlsx")
+
+all_data = []
+for file in os.listdir(input_folder):
+    if file.endswith(".xlsx") and file != "combined.xlsx":
+        file_path = os.path.join(input_folder, file)
+        df = pd.read_excel(file_path, sheet_name=0)
+        all_data.append(df)
+
+combined_df = pd.concat(all_data, ignore_index=True)
+combined_df.to_excel(output_file, index=False)
+print(f"All Excel files combined into {output_file} successfully!")
+```
+2. Save the file as `combine_excels.py` in the `Downloads` folder.
+3. Open PowerShell or Command Prompt and navigate to `Downloads`:
+   ```sh
+   cd %USERPROFILE%\Downloads\A
+   ```
+4. Run the script:
+   ```sh
+   python combine_excels.py
+   ```
