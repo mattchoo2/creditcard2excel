@@ -1,4 +1,4 @@
-# How to Batch Convert Credit Card PDF to Excel 
+# How to Batch Convert Credit Card Statement PDF to Excel 
 Note: due to `pdfplumber` imperfection in detecting blank cells. You do need to cut and align the date and value columns with the text labels.
 
 ## Prerequisites
