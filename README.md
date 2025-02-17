@@ -158,3 +158,7 @@ By following these steps, you can efficiently extract tables from PDFs into Exce
    ```sh
    python combine_excels.py
    ```
+
+
+## Support Me 💖
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/mattchoo2)
